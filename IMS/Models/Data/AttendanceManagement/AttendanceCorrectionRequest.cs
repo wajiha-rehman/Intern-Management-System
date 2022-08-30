@@ -7,26 +7,28 @@ namespace IMS.Models.Data
     [Table("tblAttendanceCorrectionRequest")]
     public class AttendanceCorrectionRequest : BaseClass
     {
-        [Column]
+        [Column("AttCorrectionID",Order = 0, TypeName = "int")]
         [Required]
+        [Key]
         public int AttCorrectionReqID { get; set; }
-        [Column]
+        [Column("AttendanceID", Order = 1, TypeName = "int")]
         [Required]
         [ForeignKey("Attendance")]
         public Attendance AttendanceID { get; set; }
-        [Column]
+        [Column("AttendanceType", Order = 2, TypeName = "nvarchar(255)")]
         [Required]
+        [ForeignKey("Attendance")] 
         public string AttendanceType { get; set; }
-        [Column]
+        [Column("AttendanceDate", Order = 3, TypeName = "datetime")]
         [Required]
         public DateTime AttendanceDate { get; set; }
-        [Column]
+        [Column("NewAttendanceTime", Order = 4, TypeName = "datetime")]
         [Required]
         public DateTime NewAttendanceTime { get; set; }
-        [Column]
+        [Column("Reason", Order = 5, TypeName = "nvarchar(255)")]
         [Required]
         public string Reason { get; set; }
-        [Column] 
+        [Column("ApprovedStatus", Order = 6, TypeName = "bit")]
         public bool ApprovedStatus { get; set; }
     }
 }

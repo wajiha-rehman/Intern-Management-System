@@ -11,8 +11,13 @@ namespace IMS.Data
 {
     public class IMSDbContext : IdentityDbContext<IMSApplicationUser>
     {
+        //public IMSDbContext(DbContextOptions<IMSDbContext> options)
+        //    : base(options)
+        //{
+        //}
+
         public IMSDbContext(DbContextOptions<IMSDbContext> options)
-            : base(options)
+            : base("IMSDbContextConnection")
         {
         }
 

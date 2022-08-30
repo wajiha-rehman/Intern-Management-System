@@ -7,8 +7,9 @@ namespace IMS.Models.Data
     public class UserRole : BaseClass
     {
         [Key]
+        [Column("UserRoleID", Order = 0, TypeName = "int")]
         public int UserRoleID { get; set; }
-        [Column]
+        [Column("Role", Order = 1, TypeName = "nvarchar(255)")]
         [Required]
         public string Role { get; set; }
       

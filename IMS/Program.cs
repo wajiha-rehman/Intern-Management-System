@@ -22,5 +22,5 @@ namespace IMS
                 {
                     webBuilder.UseStartup<Startup>();
                 });
-    }
+        }
 }

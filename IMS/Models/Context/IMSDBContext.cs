@@ -6,11 +6,15 @@ using System.Threading.Tasks;
 
 namespace IMS.Models.Context
 {
-    public class IMSDBContext : DbContext
+    public class IMSDBContext
     {
-        public IMSDBContext() : base("name=IMSDbContextConnectionStaging")
-        {
 
-        }
     }
+    //public class IMSDBContext : DbContext
+    //{
+    //    public IMSDBContext(DbContextOptions options) : base()
+    //    {
+
+    //    }
+    //}
 }

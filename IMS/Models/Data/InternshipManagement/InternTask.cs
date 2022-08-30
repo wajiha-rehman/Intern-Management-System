@@ -5,31 +5,32 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace IMS.Models.Data
 {
     [Table("tblTask")]
-    public class Task : BaseClass
+    public class InternTask : BaseClass
     {
-        [Column]
+        [Column("TaskID",Order = 0,TypeName ="int")]
         [Required]
+        [Key]
         public int TaskID { get; set; }
-        [Column]
+        [Column("TaskDescription", Order = 1, TypeName = "nvarchar(255)")]
         [Required]
         public string TaskDescription { get; set; }
-        [Column]
+        [Column("AssignedTo", Order = 2)]
         [Required]
         [ForeignKey("Intern")]
-        public Intern AssignedTo { get; set; }
-        [Column]
+        public InternDetails AssignedTo { get; set; }
+        [Column("AssignedDate", Order = 3,TypeName ="DateTime")]
         [Required]
         public DateTime AssignedDate { get; set; }
-        [Column]
+        [Column("StartDate", Order = 4, TypeName = "DateTime")]
         public DateTime StartDate { get; set; }
-        [Column]
+        [Column("CompletedDate", Order = 5, TypeName = "DateTime")]
         public DateTime CompletedDate { get; set; }
-        [Column]
+        [Column("Status", Order = 6, TypeName = "int")]
         [Required]
         public string Status { get; set; }
-        [Column]
+        [Column("InternRemarks", Order = 7, TypeName = "nvarchar(MAX)")]
         public string InternRemarks { get; set; }
-        [Column]
+        [Column("ManagerFeedback", Order = 8, TypeName = "nvarchar(MAX)")]
         public string ManagerFeedback { get; set; }
     }
 }

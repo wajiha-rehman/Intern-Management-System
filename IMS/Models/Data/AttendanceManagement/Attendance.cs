@@ -7,22 +7,23 @@ namespace IMS.Models.Data
     [Table("tblAttendance")]
     public class Attendance : BaseClass
     {
-        [Column]
+        [Column("AttendanceID", Order = 0, TypeName = "int")]
         [Required]
+        [Key]
         public int AttendanceID { get; set; }
-        [Column]
+        [Column("AttendanceDate", Order = 1, TypeName = "DateTime")]
         [Required]
         public DateTime AttendanceDate { get; set; }
-        [Column]
+        [Column("CheckOutTime", Order = 2, TypeName = "DateTime")]
         [Required]
         public DateTime CheckOutTime { get; set; }
-        [Column]
+        [Column("CheckInTime", Order = 3, TypeName = "DateTime")]
         [Required]
         public DateTime CheckInTime{ get; set; }
-        [Column]
+        [Column("Intern", Order = 4)]
         [Required]
         [ForeignKey("Intern")]
-        public Intern Intern { get; set; }
+        public InternDetails Intern { get; set; }
 
     }
 }

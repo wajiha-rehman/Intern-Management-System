@@ -6,13 +6,15 @@ namespace IMS.Models.Data
     [Table("tblPerformanceReview")]
     public class PerformanceReview : BaseClass
     {
-        [Column]
+        [Column("ReviewID",Order = 0, TypeName = "int")]
         [Required]
+        [Key]
         public int ReviewID { get; set; }
-        [Column]
+        [Column("Intern", Order = 1)]
         [Required]
         [ForeignKey("Intern")]
-        public Intern Intern { get; set; }
+        public InternDetails Intern { get; set; }
+        [Column("Remarks", Order = 2, TypeName = "nvarchar(255)")]
         public string Remarks { get; set; }
     }
 }

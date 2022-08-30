@@ -4,30 +4,31 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace IMS.Models.Data
 {
     [Table("tblProgram")]
-    public class Program : BaseClass
+    public class InternshipProgram : BaseClass
     {
-        [Column]
+        [Column("ProgramID",Order =0,TypeName ="int")]
         [Required]
+        [Key]
         public int ProgramID { get; set; }
-        [Column]
+        [Column("ProgramTitle", Order = 1, TypeName = "nvarchar(255)")]
         [Required]
         public string ProgramTitle { get; set; }
-        [Column]
+        [Column("TransportAllowance", Order = 2, TypeName = "decimal(18,5)")]
         [Required]
-        public string TransportAllowance { get; set; }
-        [Column]
+        public double TransportAllowance { get; set; }
+        [Column("CasualLeavesAllowed", Order = 3, TypeName = "int")]
         [Required]
         public int CasualLeavesAllowed { get; set; }
-        [Column]
+        [Column("SickLeavesAllowed", Order = 4, TypeName = "int")]
         [Required]
         public int SickLeavesAllowed { get; set; }
-        [Column]
+        [Column("Duration", Order = 5, TypeName = "string")]
         [Required]
         public string Duration { get; set; }
-        [Column]
+        [Column("Open", Order = 6, TypeName = "bit")]
         [Required]
         public bool Open { get; set; }
-        [Column]
+        [Column("Department", Order = 7)]
         [Required]
         [ForeignKey("Department")]
         public Department Department { get; set; }
