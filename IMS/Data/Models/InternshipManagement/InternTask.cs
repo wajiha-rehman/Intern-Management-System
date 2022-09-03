@@ -16,7 +16,7 @@ namespace IMS.Models.Data
         public string TaskDescription { get; set; }
         [Column("AssignedTo", Order = 2)]
         [Required]
-        [ForeignKey("Intern")]
+        [ForeignKey("AssignedTo")]
         public InternDetails AssignedTo { get; set; }
         [Column("AssignedDate", Order = 3,TypeName ="DateTime")]
         [Required]
@@ -27,7 +27,7 @@ namespace IMS.Models.Data
         public DateTime CompletedDate { get; set; }
         [Column("Status", Order = 6, TypeName = "int")]
         [Required]
-        public string Status { get; set; }
+        public int Status { get; set; }
         [Column("InternRemarks", Order = 7, TypeName = "nvarchar(MAX)")]
         public string InternRemarks { get; set; }
         [Column("ManagerFeedback", Order = 8, TypeName = "nvarchar(MAX)")]

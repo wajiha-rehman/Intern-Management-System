@@ -12,8 +12,8 @@ namespace IMS.Models.Data
         public int ReviewID { get; set; }
         [Column("Intern", Order = 1)]
         [Required]
-        [ForeignKey("Intern")]
-        public InternDetails Intern { get; set; }
+        [ForeignKey("InternID")]
+        public int InternID { get; set; }
         [Column("Remarks", Order = 2, TypeName = "nvarchar(255)")]
         public string Remarks { get; set; }
     }

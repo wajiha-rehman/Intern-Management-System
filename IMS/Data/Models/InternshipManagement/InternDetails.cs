@@ -25,16 +25,18 @@ namespace IMS.Models.Data
         public int SickLeavesRemaining { get; set; }
         [Column("Program", Order = 13)]
         [Required]
-        [ForeignKey("Program")]
-        public InternshipProgram Program { get; set; }
+        [ForeignKey("ProgramID")]
+        public int ProgramID { get; set; }
+        //public InternshipProgram Program { get; set; }
         [Column("UserID", Order = 14)]
         [Required]
-        [ForeignKey("User")]
-        public User UserID { get; set; }
+        [ForeignKey("UserID")]
+        public int UserID { get; set; }
         [Column("HRRepresentative", Order = 15)]
         [Required]
-        [ForeignKey("User")]
-        public User HRRepresentative { get; set; }
+        [ForeignKey("HRUser")]
+        public int HRRepID { get; set; }
+        public User HRRepresentative { get; set; } 
 
     }
 }

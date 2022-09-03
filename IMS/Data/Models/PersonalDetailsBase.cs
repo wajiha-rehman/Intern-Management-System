@@ -37,7 +37,7 @@ namespace IMS.Models.Data
         [Column] 
         public DateTime LastWorkingDate { get; set; }
         [Column]
-        [ForeignKey("User")]
-        public User User { get; set; }
+        [ForeignKey("UserID")]
+        public int UserID { get; set; }
     }
 }

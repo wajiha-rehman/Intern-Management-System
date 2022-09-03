@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace IMS.Models.Data
 {
     [Table("tblLeaveRequest")]
-    public class LeaveRequest : BaseClass
+    public class Leave : BaseClass
     {
         [Column("LeaveRequestID",Order =0,TypeName = "int")]
         [Required]
@@ -13,8 +13,8 @@ namespace IMS.Models.Data
         public int LeaveRequestID { get; set; }
         [Column("Intern", Order = 1)]
         [Required]
-        [ForeignKey("Intern")]
-        public InternDetails Intern { get; set; }
+        [ForeignKey("InternID")]
+        public int InternID { get; set; }
         [Column("LeaveType", Order = 2, TypeName = "nvarchar(255)")]
         [Required]
         public string LeaveType { get; set; }

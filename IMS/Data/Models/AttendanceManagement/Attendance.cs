@@ -22,8 +22,8 @@ namespace IMS.Models.Data
         public DateTime CheckInTime{ get; set; }
         [Column("Intern", Order = 4)]
         [Required]
-        [ForeignKey("Intern")]
-        public InternDetails Intern { get; set; }
+        [ForeignKey("InternID")]
+        public int InternID { get; set; }
 
     }
 }

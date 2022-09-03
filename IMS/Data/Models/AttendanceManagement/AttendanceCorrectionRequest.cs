@@ -13,8 +13,8 @@ namespace IMS.Models.Data
         public int AttCorrectionReqID { get; set; }
         [Column("AttendanceID", Order = 1, TypeName = "int")]
         [Required]
-        [ForeignKey("Attendance")]
-        public Attendance AttendanceID { get; set; }
+        [ForeignKey("AttendanceID")]
+        public int AttendanceID { get; set; }
         [Column("AttendanceType", Order = 2, TypeName = "nvarchar(255)")]
         [Required]
         [ForeignKey("Attendance")] 

@@ -31,7 +31,8 @@ namespace IMS.Models.Data
         public string Email { get; set; }
         [Column("UserRole", Order = 7)]
         [Required]
-        [ForeignKey("UserRole")]
-        public UserRole UserRole { get; set; }
+        [ForeignKey("UserRoleID")]
+        public int UserRoleID { get; set; }
+        //public InternDetails Details { get; set; }
     }
 }

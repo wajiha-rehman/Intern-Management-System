@@ -22,7 +22,7 @@ namespace IMS.Models.Data
         [Column("SickLeavesAllowed", Order = 4, TypeName = "int")]
         [Required]
         public int SickLeavesAllowed { get; set; }
-        [Column("Duration", Order = 5, TypeName = "string")]
+        [Column("Duration", Order = 5, TypeName = "nvarchar(255)")]
         [Required]
         public string Duration { get; set; }
         [Column("Open", Order = 6, TypeName = "bit")]
@@ -30,8 +30,8 @@ namespace IMS.Models.Data
         public bool Open { get; set; }
         [Column("Department", Order = 7)]
         [Required]
-        [ForeignKey("Department")]
-        public Department Department { get; set; }
+        [ForeignKey("DepartmentID")]
+        public int DepartmentID { get; set; }
 
     }
 }
