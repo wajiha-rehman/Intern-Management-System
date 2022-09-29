@@ -4,14 +4,16 @@ using IMS.Models.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace IMS.Migrations
 {
     [DbContext(typeof(IMSDBContext))]
-    partial class IMSDBContextModelSnapshot : ModelSnapshot
+    [Migration("20220905070554_Update-Task-2")]
+    partial class UpdateTask2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

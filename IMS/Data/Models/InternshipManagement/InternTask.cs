@@ -16,7 +16,7 @@ namespace IMS.Models.Data
         public string TaskDescription { get; set; }
         [Column("AssignedTo", Order = 2)]
         [Required]
-        [ForeignKey("AssignedTo")]
+        [ForeignKey("InternID")]
         public InternDetails AssignedTo { get; set; }
         [Column("AssignedDate", Order = 3,TypeName ="DateTime")]
         [Required]

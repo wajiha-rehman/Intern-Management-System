@@ -4,14 +4,16 @@ using IMS.Models.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace IMS.Migrations
 {
     [DbContext(typeof(IMSDBContext))]
-    partial class IMSDBContextModelSnapshot : ModelSnapshot
+    [Migration("20220905070449_Update-Task")]
+    partial class UpdateTask
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -261,6 +263,9 @@ namespace IMS.Migrations
                         .HasColumnType("DateTime")
                         .HasColumnName("AssignedDate");
 
+                    b.Property<int?>("AssignedToInternID")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("CompletedDate")
                         .HasColumnType("DateTime")
                         .HasColumnName("CompletedDate");
@@ -269,7 +274,8 @@ namespace IMS.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<int>("InternID")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("AssignedTo");
 
                     b.Property<string>("InternRemarks")
                         .HasColumnType("nvarchar(MAX)")
@@ -297,7 +303,7 @@ namespace IMS.Migrations
 
                     b.HasKey("TaskID");
 
-                    b.HasIndex("InternID");
+                    b.HasIndex("AssignedToInternID");
 
                     b.ToTable("tblTask");
                 });
@@ -537,9 +543,7 @@ namespace IMS.Migrations
                 {
                     b.HasOne("IMS.Models.Data.InternDetails", "AssignedTo")
                         .WithMany()
-                        .HasForeignKey("InternID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("AssignedToInternID");
 
                     b.Navigation("AssignedTo");
                 });
